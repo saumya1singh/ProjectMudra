@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:scrollbars="vertical"
+
+    android:background="#551818AD"
+    android:layout_height="match_parent"
+    tools:context=".CheckOnlineLoans">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:background="#1E7D9C"
+        android:textColor="#fff"
+        android:textSize="21sp"
+        android:padding="12dp"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:shadowColor="#041104"
+        android:shadowRadius="24"
+        android:textStyle="bold"
+        android:text="CHECK ONLINE LOANS | Compare Loans Online "
+        android:layout_weight="2"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="591dp"
+
+        android:alignmentMode="alignMargins"
+        android:columnCount="2"
+        android:layout_weight="8"
+     android:background="#3F51B5"
+        android:padding="14dp"
+        android:rowCount="3">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="148dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="114dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/creditscoree" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="CREDIT SCORE"
+                android:textSize="10dp"
+                android:textColor="#fff"
+                android:textStyle="bold" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="121dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/personalloan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="29dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="PERSONAL LOANS"
+                    android:textColor="#fff"
+                    android:textSize="10dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="125dp"
+                    android:layout_height="61dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/homeloan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="HOME LOANS"
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="129dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/businessloan" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="PERSONAL LOANS"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="74dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/cre" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="PERSONAL LOANS"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="144dp"
+            android:layout_height="129dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="#1E7D9C"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="15dp">
+            <LinearLayout
+                android:id="@+id/getfreecredit"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:weightSum="6"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="74dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="3"
+                    android:src="@drawable/sc" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="SELFIE CASH"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </GridLayout>
+
+
+</LinearLayout>

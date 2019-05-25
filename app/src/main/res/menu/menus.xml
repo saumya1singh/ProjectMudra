@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/mudra"
+        android:orderInCategory="100"
+        android:id="@+id/a"
+        android:title="HOME">
+
+    </item>
+
+    <item
+        android:id="@+id/b"
+        android:icon="@drawable/mudra"
+        android:orderInCategory="200"
+        app:showAsAction="never"
+        android:title="CHECK ONLINE LOAN">
+
+    </item>
+
+    <item
+        android:id="@+id/c"
+        android:icon="@drawable/mudra"
+        android:orderInCategory="300"
+        android:title="KNOWLEDGE CENTER">
+
+    </item>
+    <item
+        android:id="@+id/d"
+        android:icon="@drawable/mudra"
+        android:orderInCategory="400"
+        android:title="CONTACT US">
+
+    </item>
+   
+
+
+</menu>

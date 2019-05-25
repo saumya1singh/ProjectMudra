@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/card"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <FrameLayout
+        android:layout_marginStart="20dp"
+        android:layout_width="310dp"
+        android:layout_height="208dp"
+        android:foregroundGravity="center"
+        android:layout_marginBottom="70dp"
+        android:background="#3EB2C7"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:layout_width="296dp"
+            android:layout_height="match_parent"
+            android:layout_gravity=""
+
+            android:padding="6dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/mudra" />
+
+        <ImageView
+            android:layout_width="310dp"
+            android:layout_height="208dp"
+
+            android:layout_gravity="center"
+            android:src="@drawable/frame" />
+    </FrameLayout>
+</LinearLayout>

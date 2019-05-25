@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/card"
+    android:scrollbars="vertical"
+    tools:context=".ContactUsForm">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:background="@drawable/contact"
+            android:outlineAmbientShadowColor="#0E0213"
+            android:outlineSpotShadowColor="#0E0213"
+            android:padding="12dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="674dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="FULL NAME "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="WRITE YOUR FULL NAME"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="LOAN AMOUNT "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="LOAN AMOUNT"
+                    android:inputType="number"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="LOAN TYPE "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/type"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint="LOAN TYPE"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif-monospace"
+                    android:text="PHONE NUMBER "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="YOUR EMAIL "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/mail"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="YOUR CITY "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/city"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="serif-monospace"
+                    android:text="YOUR OCCUPATION "
+                    android:textColor="#0E0213"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/occupation"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:outlineAmbientShadowColor="#0E0213"
+                    android:outlineProvider="background"
+                    android:outlineSpotShadowColor="#0E0213"
+                    android:textStyle="bold"
+
+                    />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/send"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    app:cardBackgroundColor="#142480"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="monospace"
+                        android:text="SEND    >>"
+                        android:textColor="#fff"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+
+                        />
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

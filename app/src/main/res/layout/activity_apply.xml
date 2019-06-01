@@ -7,17 +7,254 @@
     android:orientation="vertical"
     tools:context=".ApplyActivity">
 
-
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:foregroundGravity="center"
-        android:layout_height="wrap_content"
-         />
-    <WebView
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressBar1"-->
+        <!--style="?android:attr/progressBarStyleLarge"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:foregroundGravity="center"-->
+        <!--android:layout_height="wrap_content"-->
+         <!--/>-->
+    <!--<WebView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:id="@+id/webview"-->
+        <!--android:layout_height="match_parent" />-->
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:id="@+id/webview"
-        android:layout_height="match_parent" />
+
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:scrollbars="vertical"
+            android:background="@drawable/contact"
+            android:outlineAmbientShadowColor="#0E0213"
+            android:outlineSpotShadowColor="#0E0213"
+            android:padding="12dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="25dp">
+
+            <LinearLayout
+                android:layout_width="353dp"
+                android:layout_height="659dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    app:cardBackgroundColor="#fff"
+                    app:cardElevation="30dp"
+                    android:layout_height="80dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+android:layout_marginEnd="10dp"
+                        android:layout_height="190dp">
+
+                        <TextView
+                            android:layout_width="353dp"
+                            android:layout_height="43dp"
+                            android:fontFamily="serif-monospace"
+                            android:gravity="center"
+                            android:text="PERSONAL AND EMPLOYMENT DETAILS"
+                            android:textColor="#56BCBE"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.AppCompatImageButton
+                            android:layout_width="62dp"
+                            android:layout_height="45dp"
+                            android:layout_marginLeft="140dp"
+                            android:background="@drawable/ic_arrow_drop_down_black_24dp" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+                <LinearLayout
+                    android:layout_marginTop="23dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvtype"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnertype"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+            </LinearLayout>
+                <LinearLayout
+
+                  android:layout_marginTop="20dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvemployee"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinneremploye"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+                 android:layout_marginTop="20dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvgender"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnergender"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+                  android:layout_marginTop="20dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvdobd"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerdobd"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+               android:layout_marginTop="20dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvdobm"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerdobm"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                </LinearLayout>
+                <LinearLayout
+                  android:layout_marginTop="20dp"
+                    android:layout_width="310dp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvdoby"
+                        android:layout_width="240dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="serif-monospace"
+
+                        android:textColor="#0E0213"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinnerdoby"
+                        android:layout_width="58dp"
+                        android:layout_height="match_parent">
+
+                    </Spinner>
+
+                </LinearLayout>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/btnnext"
+
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="19dp"
+                    app:cardBackgroundColor="#142480"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+
+                        android:fontFamily="monospace"
+                        android:text="NEXT   >>"
+                        android:textColor="#fff"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+
+                        />
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </android.support.v4.widget.NestedScrollView>
+
+
 </LinearLayout>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:weightSum="10"
     android:scrollbars="vertical"
-
     android:background="#551818AD"
     android:layout_height="match_parent"
-    tools:context=".CheckOnlineLoans">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OnlineLoansFrag">
 
     <TextView
         android:layout_width="match_parent"
@@ -35,7 +33,7 @@
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:layout_weight="8"
-     android:background="#3F51B5"
+        android:background="#3F51B5"
         android:padding="14dp"
         android:rowCount="3">
 
@@ -60,15 +58,15 @@
                     android:layout_weight="3"
                     android:src="@drawable/creditscoree" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="38dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="CREDIT SCORE"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="CREDIT SCORE"
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_account_circle_black_24dp"
+            android:title="My Account" />
+        <item
+            android:id="@+id/nav_credit"
+            android:icon="@drawable/creditscoree"
+            android:title="Check Credit Score" />
+        <item
+            android:id="@+id/nav_rewards"
+            android:icon="@drawable/ic_attach_money_black_24dp"
+            android:title="Rewards" />
+    </group>
+
+    <item android:title="Tools">
+        <menu>
+            <item
+                android:id="@+id/nav_calculator"
+                android:icon="@drawable/ic_menu_share"
+                android:title="EMI Calculator" />
+            <item
+                android:id="@+id/nav_selfie"
+                android:icon="@drawable/sc"
+                android:title="Selfie Cash" />
+        </menu>
+    </item>
+
+    <item android:title="More">
+        <menu>
+            <item android:title="Logout"
+                android:id="@+id/btnlogout"
+                android:icon="@drawable/ic_call_missed_outgoing_black_24dp"
+                />
+
+            <item android:title="About Us" android:icon="@drawable/ic_bookmark_black_24dp"
+                android:id="@+id/btnabout"
+                />
+        </menu>
+
+    </item>
+
+
+</menu>

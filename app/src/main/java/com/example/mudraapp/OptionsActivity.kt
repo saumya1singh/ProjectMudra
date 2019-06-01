@@ -16,7 +16,7 @@ class OptionsActivity : AppCompatActivity() {
         }
 
         becomepartner.setOnClickListener {
-            startActivity(Intent(baseContext ,CheckOnlineLoans::class.java ))
+
         }
     }
 }

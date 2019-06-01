@@ -11,28 +11,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".BottomActvity"
+            android:label="@string/title_activity_bottom_actvity" />
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".ApplyIntent" />
         <activity android:name=".WelcomeActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".ReferEarn" />
         <activity android:name=".EMIcalculator" />
-        <activity android:name=".CheckMaxEligibility" />
         <activity android:name=".ContactUsForm" />
         <activity android:name=".ContactUs" />
         <activity android:name=".KnowledgeCenter" />
-        <activity android:name=".CheckOnlineLoans" />
         <activity android:name=".ApplyActivity" />
         <activity android:name=".CheckScore" />
         <activity android:name=".OptionsActivity" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

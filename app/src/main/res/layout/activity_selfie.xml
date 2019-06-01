@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/card"
+    tools:context=".SelfieActivity">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/selfiegif"
+        android:layout_width="251dp"
+        android:layout_height="175dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:foregroundGravity="center"
+        app:srcCompat="@drawable/sc" />
+
+
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="320dp"
+        android:layout_height="209dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:outlineAmbientShadowColor="#661D0A1D"
+        android:outlineSpotShadowColor="#661D0A1D"
+        app:cardBackgroundColor="#4dd0e1"
+        app:cardMaxElevation="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp">
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="330dp"
+        android:layout_height="149dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Selfie cash is an in house financial product of Mudrahome.com which is specifically designed for MSME and small businesses that need funds instantly or have a working capital requirement.
+Selfie Cash is especially for the Businessman who wants instant cashfor their business but also serves your need of personal loan. "
+
+        android:textColor="#020E08"
+        android:textStyle="bold"
+
+        />
+    </android.support.design.card.MaterialCardView>
+    <android.support.v7.widget.CardView
+
+        android:layout_width="201dp"
+        android:layout_height="40dp"
+       android:layout_marginLeft="90dp"
+
+        android:layout_marginTop="39dp"
+        app:cardBackgroundColor="#142480"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="KNOW MORE  ->"
+            android:textColor="#fff"
+            android:textSize="17dp"
+            android:textStyle="bold"
+
+            />
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

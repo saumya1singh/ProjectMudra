@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.mudraapp.ViewPagers.FragmentA
+import com.example.mudraapp.ViewPagers.FragmentB
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_my_account.*
 
@@ -24,6 +26,7 @@ class MyAccountFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_my_account, container, false)
 
 
@@ -35,6 +38,13 @@ class MyAccountFragment : Fragment() {
         txtmobile.text = mobile
         val mail = FirebaseAuth.getInstance().currentUser?.email.toString()
         txtemail.text = mail
+
+        val fragmentlist= arrayListOf<Fragment>()
+        fragmentlist.add(FragmentA())
+        fragmentlist.add(FragmentB())
+        val  pagerAdapter= com.example.mudraapp.ViewPagers.PagerAdapter(fragmentlist , fragmentManager )
+        viewpager.adapter=pagerAdapter
+        tablayout.setupWithViewPager(viewpager)
     }
 
 }

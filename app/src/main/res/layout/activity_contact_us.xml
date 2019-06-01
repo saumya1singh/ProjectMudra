@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-android:orientation="vertical"
-    android:scrollbars="vertical"
-    android:scrollbarStyle="insideInset"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="#2E6086"
+    android:orientation="vertical"
+    android:scrollbarStyle="insideInset"
+    android:scrollbars="vertical"
     tools:context=".ContactUs">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_margin="6dp"
+        android:layout_margin="17dp"
         android:background="@drawable/buttondsn"
         android:orientation="horizontal">
 
@@ -28,67 +28,67 @@ android:orientation="vertical"
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <android.support.v7.widget.CardView
-        android:scrollbars="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/card"
-       android:layout_margin="7dp"
-        app:cardElevation="20dp"
-        app:cardCornerRadius="25dp"
-        app:cardMaxElevation="20dp"
-        app:cardBackgroundColor="@color/cardview_dark_background">
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            android:background="@drawable/card"
+            android:scrollbars="vertical"
+            app:cardBackgroundColor=""
+            app:cardCornerRadius="25dp"
+            app:cardElevation="20dp"
+            app:cardMaxElevation="20dp">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:textStyle="bold"
-                android:text="ABOUT YOUR REQUIREMENTS"
-                android:textSize="25dp"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textColor="#fff"
-                android:fontFamily="monospace"
-                />
+                android:layout_height="472dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="122dp"
-                android:background="@drawable/buttondsn"
-                android:fontFamily="serif-monospace"
-                android:gravity="center"
-                android:layout_margin="10dp"
-                android:text="Kindly share your details or refer someone and one of our loan officers will connect with you for required assistance"
-                android:textColor="#fff"
-                android:textSize="19dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="ABOUT YOUR REQUIREMENTS"
+                    android:textColor="#fff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="290dp"
-                android:layout_height="189dp"
-                android:layout_gravity="center"
-             android:outlineAmbientShadowColor="#fff"
-                android:outlineSpotShadowColor="#fff"
-                android:background="@drawable/contact"
-                android:padding="10dp" />
+                <TextView
+                    android:layout_width="369dp"
+                    android:layout_height="115dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/buttondsn"
+                    android:fontFamily="serif-monospace"
+                    android:gravity="center"
+                    android:text="Kindly share your details or refer someone and one of our loan officers will connect with you for required assistance"
+                    android:textColor="#fff"
+                    android:textSize="19dp" />
 
-            <Button
-               android:id="@+id/letsconnect"
-                android:layout_width="162dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/buttondsn"
-                android:text="LET'S CONNECT"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="277dp"
+                    android:layout_height="179dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/contact"
+                    android:outlineAmbientShadowColor="#fff"
+                    android:outlineSpotShadowColor="#fff"
+                    android:padding="10dp" />
 
-    </android.support.v7.widget.CardView>
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/letsconnect"
+                    android:layout_width="162dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/buttondsn"
+                    android:text="LET'S CONNECT"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
     </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

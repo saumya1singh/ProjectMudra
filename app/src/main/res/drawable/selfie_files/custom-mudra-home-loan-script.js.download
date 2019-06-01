@@ -1,0 +1,420 @@
+/* Custom ws theme script */
+/* Loan Eligibility Function */
+function preventvalue(AnualInterestRate, TotalLoanMonths, maximum_emi){
+	var DownPayment= "0";
+	var MonthRate=AnualInterestRate/1200;
+	var Print=maximum_emi-DownPayment;
+	var MonthPayment= Print*(Math.pow(1+MonthRate,TotalLoanMonths)-1)/(MonthRate*Math.pow(1+MonthRate,TotalLoanMonths));
+	return Math.round(MonthPayment);
+}
+
+function cleanInt(x) {
+    x = Number(x);
+    return x >= 0 ? Math.floor(x) : Math.ceil(x);
+}
+
+function calculateMudraHomeLoan(){ 
+	var mudrahome_monthly_emp = jQuery('#mudrahome_monthly_emp').val(); 
+	var mudrahome_user_age = parseInt(jQuery('#mudrahome_user_age').val());
+	var mudrahome_monthly_rental =  jQuery('#slider_4_txt').val(); 
+	//var mudrahome_monthly_rental =  mudrahome_monthly_rental.replace(/,/g , '')); 
+	var mudrahome_monthly_rental = parseInt(mudrahome_monthly_rental.replace(",",""));
+	var mudrahome_interest_rate =  parseInt(jQuery('#mudrahome_interest_rate').val());
+	var calculated_tenor ='';
+	var calculated_tenor = 60-mudrahome_user_age;
+	var error = '';
+	
+	if(mudrahome_monthly_emp=='SALARIED' && (mudrahome_user_age<1 || mudrahome_user_age == NaN  || mudrahome_user_age>60) ){
+		error ='Your age should not exceed 60.'; 
+	}else if(mudrahome_monthly_emp=='SELFEMPLOYMENT'  && (mudrahome_user_age<1 || mudrahome_user_age == NaN || mudrahome_user_age>65) ){
+		error ='Your age should not exceed 65.'; 
+	}else if(mudrahome_user_age<0 || isNaN(mudrahome_user_age)){
+		error ='Please enter your age.'; 
+	} 
+	
+	if(mudrahome_monthly_emp=='SALARIED'){
+		if(calculated_tenor > 30){ 
+			calculated_tenor = 360;
+		}else{
+			calculated_tenor =(60-mudrahome_user_age)*12;
+		}
+	}else if(mudrahome_monthly_emp=='SELFEMPLOYMENT'){
+		if(calculated_tenor > 20){
+			calculated_tenor=240; 
+		}else{
+			calculated_tenor =(65-mudrahome_user_age)*12; 
+		}
+	}
+	//alert(mudrahome_monthly_rental);
+	 var mudrahome_amt_num_box  = preventvalue(mudrahome_interest_rate,calculated_tenor,mudrahome_monthly_rental);   
+	 console.log(mudrahome_user_age+'error'+error);
+	 if(error==''){
+		 jQuery('#mudrahome_tenure').val(calculated_tenor);  
+		 jQuery('#mudrahome_amt_num_box').text(getFormattedNumber(mudrahome_amt_num_box));   
+		 jQuery('#mudrahome_amt_word_box').text('Rs. '+convertNumberToWords(mudrahome_amt_num_box));  
+	 }else{ 
+		 jQuery('#mudrahome_tenure').val(' ');  
+		 jQuery('#mudrahome_amt_num_box').text(error);   
+		 jQuery('#mudrahome_amt_word_box').text('');   
+	 } 
+	 return false;
+	    
+}
+
+function isEmail(email) {
+	  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	  return regex.test(email);
+}
+ 
+jQuery(document).ready(function(){
+	
+	var dbarrow = dbArrow;	
+	jQuery('.for-other-value').change(function(e){
+		  var locationval = jQuery(this).val(); 
+		  if(locationval=='Other'){
+			  jQuery(this).closest('.for_other_row').find('.for-other-input').removeClass('hide');
+		  }else{
+			  jQuery(this).closest('.for_other_row').find('.for-other-input').addClass('hide');
+		  }
+	});  
+	
+	jQuery(document).on('keyup keypress blur change','.calc-number-format',function() {
+		var currentnumber = jQuery(this).val();  
+		var currentnumber_main =currentnumber;
+		var currentnumberwordformat='';
+		 // console.log("okay"+currentnumber);
+		  if(currentnumber_main==0){
+		  	 jQuery(this).val(currentnumber);
+		  }else{
+		  	  currentnumber = cleanInt(currentnumber); 
+		  	
+		  	 var currentnumberwordformat = getNumToWords(currentnumber);
+		  	 if(isNaN(currentnumber) || currentnumber<1){
+			  jQuery(this).val('');
+			  currentnumberwordformat ='Please use numbers only';
+		  	}   
+		  }
+
+		  if(jQuery(this).closest('.form-group').find('.word-number-format').length>0){ 
+			 jQuery(this).next('.word-number-format').html(dbarrow+currentnumberwordformat); 
+		 }else{ 
+			 jQuery(this).after( "<p class='word-number-format'>"+dbarrow+currentnumberwordformat+"</p>" );
+		 }
+		 
+		  
+		  
+		
+		 
+		
+		
+		 
+	});
+	//User Age Print RENT TO EMI CALCULATOR
+	jQuery(document).on('keyup keypress blur change','.calc-number-user-age',function() {
+		var currentnumber = jQuery(this).val();  
+		var currentnumber_main =currentnumber;
+		var currentnumberwordformat='';
+		 // console.log("okay"+currentnumber);
+		  if(currentnumber_main==0){
+		  	 jQuery(this).val(currentnumber);
+		  }else{
+		  	  currentnumber = cleanInt(currentnumber); 
+		  	
+		  	 var currentnumberwordformat = getNumToage(currentnumber);
+		  	 if(isNaN(currentnumber) || currentnumber<1){
+			  jQuery(this).val('');
+			  currentnumberwordformat ='Please use numbers only';
+		  	}   
+		  }
+
+		  if(jQuery(this).closest('.form-group').find('.word-number-format').length>0){ 
+			jQuery(this).next('.word-number-format').html(dbarrow+currentnumberwordformat); 
+		 }else{ 
+			jQuery(this).after( "<p class='word-number-format'>"+dbarrow+currentnumberwordformat+"</p>" );
+		 }
+		 
+		  
+		  
+		
+		 
+		
+		
+		 
+	});
+	
+	jQuery('.max-limit-input').unbind('keyup change input paste').bind('keyup change input paste',function(e){  
+		
+	    var $this = jQuery(this); 
+	
+	    var valLength =  parseInt($this.val());  
+	    
+	    var maxlen = parseInt($this.data('maxlen')); 
+	    
+	    if($this.hasClass("maxlength")){  
+	        console.log('ma12x');
+	        $this.val($this.val().substring(0,maxlen)); 
+	    }else if(valLength>maxlen){ 
+	        console.log('maxlen');
+	        $this.val(maxlen);
+	    }
+	}); 
+	 
+ 
+    jQuery('.loan-registration-form .fieldset:eq(0)').fadeIn('slow');
+
+    jQuery('.loan-registration-form .required').on('focus', function () {
+        jQuery(this).removeClass('input-error');
+    });
+
+    // next step
+    jQuery('.loan-registration-form .btn-next').on('click', function () {
+		
+		var $thisbutton = jQuery(this);
+    	jQuery('#allbanksupport').html('');
+        var parent_fieldset = jQuery(this).parents('.fieldset');
+        var next_step = true;
+        jQuery('.process-error-message').hide();
+        jQuery('.age-error-message').hide();
+        jQuery('.otp_error').hide();
+        jQuery('.term_and_condition_error').hide();
+        parent_fieldset.find('.required').each(function () {
+        	var reqcond = jQuery(this).closest('.hide').hasClass('hide'); 
+            if((jQuery(this).val() == "" || jQuery(this).val()==0 ||(jQuery(this).is('input[type="email"]') && !isEmail(jQuery(this).val()))) && reqcond==false) {
+                jQuery(this).addClass('input-error');
+                next_step = false;
+            } else {
+                jQuery(this).removeClass('input-error');
+            }
+        }); 
+        
+        var curr_step = $thisbutton.data('step'); 
+        /* if(curr_step=='mobile'){
+	        if(!jQuery('#loan_calc_term_and_condition').is(":checked")){
+	        	  next_step = false;
+	        	  jQuery('#loan_calc_term_and_condition').addClass('input-error');
+				  
+	        }else{
+	        	jQuery('#loan_calc_term_and_condition').removeClass('input-error');
+				
+	        }
+        } */
+        
+        if(next_step){ 
+			
+			var ajax_url =baseUrl
+			//alert(ajax_url);
+        	var data = jQuery('.loan-registration-form').serialize();   
+        	
+        		data = data+'&step='+curr_step; 
+        		jQuery.post(ajax_url, data, function(resp) {  
+        			var process_step =resp.outputstatus; 
+        			var wperror =resp.wperror;
+        			var otp_error =resp.otp_error;
+        			var term_and_condition_error =resp.term_and_condition_error;
+        			var mudrahomeerror =resp.mudrahomeerror;
+        			var outputstatusmessage = resp.message;  
+        			var useragemessage = resp.errorage; 
+					var mobile_generate_code = resp.mobile_confirmationcode;
+					var user_role_type = resp.user_role_type;	
+        			if(wperror!=''){
+						jQuery('.process-error-message').show();
+    		    		jQuery('.process-error-message').text(outputstatusmessage); 
+        			}else if(mudrahomeerror!=''){
+						jQuery('.age-error-message').show();
+    		    		jQuery('.age-error-message').text(useragemessage);
+					}else if(otp_error!=''){
+						jQuery('.otp_error').show();
+    		    		jQuery('.otp_error').text(otp_error);
+					}else if(term_and_condition_error!=''){
+						jQuery('.term_and_condition_error').show();
+    		    		jQuery('.term_and_condition_error').text(term_and_condition_error);
+					}else{  
+    		    		jQuery('.mudrahome-loading-new').show();
+	        			switch(process_step) {
+		        		    case 'loan': 
+		        		    	parent_fieldset.fadeOut(400, function () { 
+		    		            	console.log('loan clicked'); 
+									jQuery('.mudrahome-loading-new').hide();
+									//Add active or arrow-down click btn next	
+									var active = jQuery('.calc-nav ul li.active');
+									var next = active.next('.disabled');
+									active.removeClass('active');
+									active.removeClass('arrow-down');
+									next.addClass('active');
+									next.addClass('arrow-down');
+									//End
+		    		            	jQuery('#customer_income_fields').html(resp.customer_income_fields);
+									window.scrollTo(0,0);	
+		    		            	jQuery(this).next().fadeIn(); 
+		    		            }); 
+		        		    	
+		        		    break; 
+		        		    
+		        		    case 'income': 
+		        		    	parent_fieldset.fadeOut(400, function () { 
+		    		            	console.log('income clicked');
+									//Add active or arrow-down click btn next	
+									var active = jQuery('.calc-nav ul li.active');
+									var next = active.next('.disabled');
+									active.removeClass('active');
+									active.removeClass('arrow-down');
+									next.addClass('active');
+									next.addClass('arrow-down');
+									//End
+									jQuery('.mudrahome-loading-new').hide();
+									window.scrollTo(0,0);
+		    		            	jQuery(this).next().fadeIn(); 
+		    		            });    
+		        		    break;  
+		        		    
+		        		    case 'complete':  
+		        		    	parent_fieldset.fadeOut(400, function () { 
+		    		            	console.log('complete clicked');
+									jQuery('.mudrahome-loading-new').hide();
+									if(user_role_type=='1'){
+										jQuery('#mobile_generate_code').val(resp.mobile_confirmationcode);	
+										jQuery("#loan_eligibility_calculator_hide").hide();
+										jQuery('#allbanksupport').html(resp.ResultData);
+										jQuery('#div_apply_loan_application').html(resp.submit_document_html);
+										jQuery('#loanapplication_reference_no').html(resp.loanapplication_reference_no);	
+		        	        	   		jQuery("#loan_eligibility_calculator_form").trigger('reset');
+		        		                jQuery('#allbanksupport-area').fadeIn();
+									}else{
+										window.scrollTo(0,0);	
+										jQuery(this).next().fadeIn();	
+									} 
+		    		            }); 
+		        		    break; 
+		        		    
+		        		    case 'mobile':   
+		        	        		parent_fieldset.fadeOut(1000, function () { 
+		        	        	   		jQuery("#loan_eligibility_calculator_hide").hide();
+										jQuery('.mudrahome-loading-new').hide();
+		        	        			jQuery('#allbanksupport').html(resp.ResultData);
+										jQuery('#div_apply_loan_application').html(resp.submit_document_html);
+										jQuery('#loanapplication_reference_no').html(resp.loanapplication_reference_no);	
+		        	        	   		jQuery("#loan_eligibility_calculator_form").trigger('reset');
+		        		                jQuery('#allbanksupport-area').fadeIn();
+		        		            });  
+		        		    break; 
+		        		    	
+		        		} 
+        			}
+    	        		
+            	}, "json");
+				
+				
+        	} 
+    }); 
+    // previous step
+    jQuery('.loan-registration-form .btn-previous').on('click', function () {
+        jQuery(this).parents('.fieldset').fadeOut(400, function () {
+			window.scrollTo(0,0);
+			//Add active or arrow-down click btn previous
+			var active = jQuery('.calc-nav ul li.active');
+			var next = active.prev('.disabled');
+			active.removeClass('active');
+			active.removeClass('arrow-down');
+			next.addClass('active');
+			next.addClass('arrow-down');
+			//End
+            jQuery(this).prev().fadeIn();
+        });
+    });
+
+	jQuery('#type_of_loan').change(function(){
+		
+		var main_loan_type = jQuery(this).val(); 
+		
+		if(main_loan_type==2){ 
+			/*Bussiness Loan*/
+			jQuery('#main_employeement_type').val(2);//employment id Self Employed 2 
+			jQuery('.child_employeement_type, .user_financial_auditted_status').removeClass('hide');
+			jQuery('.for-loan-salaried,.allow_to_select_main_emp_type').addClass('hide'); 
+		}else if(main_loan_type==6){
+			/*Selfie Cash*/
+			jQuery('#main_employeement_type').val(2);//employment id Self Employed 2 
+			jQuery('.child_employeement_type').removeClass('hide');
+			jQuery('.for-loan-salaried,.allow_to_select_main_emp_type').addClass('hide'); 	
+		}else{
+			jQuery('.child_employeement_type, .user_financial_auditted_status').addClass('hide');
+			jQuery('.for-loan-salaried, .allow_to_select_main_emp_type').removeClass('hide');
+		}
+		
+		
+		
+		jQuery('.main_property_type').find('option').not('.nothide').addClass('hide');
+		
+		jQuery('#main_property_type').val('');
+		
+		if(main_loan_type==3 || main_loan_type==1){ //home loan 3 && Balance transfer 1 
+			jQuery('.main_property_type, .property_address, .available-property-3').removeClass('hide') 
+		}else if(main_loan_type==4){//Loan Against Property 4
+			jQuery('.main_property_type, .property_address, .available-property-'+main_loan_type).removeClass('hide'); 
+		}else{
+			jQuery('.main_property_type, .property_address').addClass('hide'); 
+		} 
+		
+		
+		/* Balance Transfer */
+		if(main_loan_type==1){
+			jQuery('.user_current_bank_selection_row').removeClass('hide'); 
+		}else{
+			jQuery('#user_current_bank').val('');
+			jQuery('.user_current_bank_selection_row').addClass('hide'); 
+		}
+		
+	});
+	
+	jQuery('#main_employeement_type').change(function(){
+		var main_employeement_type = jQuery(this).val(); 
+		if(main_employeement_type==2){  //employment id Self Employed 2 
+			jQuery('.child_employeement_type').removeClass('hide'); 
+		}else{
+			jQuery('.child_employeement_type').addClass('hide'); 
+		}
+		
+	});
+	
+	jQuery(document).on('click','.bank-apply-detail-btn',function(){
+		var $clickbutton = jQuery(this);
+		var bank_data_id = jQuery(this).data('id');	 
+		$clickbutton.text('Wait...');
+		var csrftoken = $('#token').val();
+		//alert(csrftoken);
+		//var base_url =  window.location.protocol+'//'+window.location.host+'/';	
+		var ajax_url =baseUrlSubmitDoc
+		jQuery.post(ajax_url, {_token:csrftoken,action:'submit_application_for_bank',bank_id:bank_data_id},
+		function(resp) { 
+			$clickbutton.text(resp.butontext);
+			// redirect to google after 5 seconds
+			window.setTimeout(function() {
+				window.location.href = resp.submit_document_html;
+			}, 2000);			
+		}, "json");
+	});
+	
+	jQuery(document).on('click','.bank-more-detail-btn',function(){
+		var bank_data_id = jQuery(this).data('id');		
+		jQuery('.bank-information-detail-'+bank_data_id).toggle();
+	})
+	
+	
+	jQuery(document).on('click','.collapsible',function(){
+		var bank_data_id = jQuery(this).data('id');
+		var coll = document.getElementsByClassName("collapsible"+bank_data_id);
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+		  this.classList.toggle("active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+			  content.style.maxHeight = null;
+			} else {
+			  content.style.maxHeight = content.scrollHeight + "px";
+			} 
+		}
+	})
+
+   
+});

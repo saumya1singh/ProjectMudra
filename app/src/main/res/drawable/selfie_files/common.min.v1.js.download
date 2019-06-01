@@ -1,0 +1,584 @@
+RUPEE = '<img src="https://mudrahome.com/frontend/images/db-arrow.png" /> Rs. ',
+
+function formatValidator(e, a, t, r, n, i, o, l, s, d, c) {
+    var u = 1,
+        h = "";
+    if ("" != a ? h = $(a) : "" != t ? h = $("." + t) : "" != r ? h = $('[name="' + t + '"]') : "" != n && (h = $("#" + n)), $(h).val($.trim($(h).val())), "" == e) {
+        if ("" == $(h).val()) return 0;
+        if ("" != s && $(h).val().length < parseInt(s)) return 0;
+        if ("" != d && $(h).val().length > parseInt(d)) return 0;
+        if ("" != o && (minimum_input_value = $(h).val().replace(/\,/g, ""), parseInt(minimum_input_value) < parseInt(o))) return 0;
+        if ("" != l && (maximum_input_value = $(h).val().replace(/\,/g, ""), parseInt(maximum_input_value) > parseInt(l))) return 0
+    }
+    var p = "";
+    switch ("" != e && (p = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode), i) {
+        case 1:
+            if ("" != p) {
+                if (!(p >= 65 && p <= 90 || p >= 97 && p <= 122 || 13 == p || 8 == p || 9 == p)) return !1
+            } else {
+                var v = /^[a-zA-Z]*$/;
+                $(h).val().match(v) || (u = 0)
+            }
+            break;
+        case 2:
+            break;
+        case 3:
+            if ("" != p) {
+                if (!(p >= 65 && p <= 90 || p >= 97 && p <= 122 || 13 == p || 8 == p || 9 == p)) return !1
+            } else {
+                v = /^[a-zA-Z][a-zA-Z\s]*$/;
+                $(h).val().match(v) || (u = 0)
+            }
+            break;
+        case 4:
+        case 5:
+        case 6:
+            break;
+        case 7:
+            if ("" != p) {
+                if (!(p >= 48 && p <= 57 || p >= 65 && p <= 90 || p >= 97 && p <= 122 || 13 == p || 8 == p || 9 == p || 46 == p || 32 == p)) return !1
+            } else {
+                v = /^[a-zA-Z0-9 ]*$/;
+                $(h).val().match(v) || (u = 0)
+            }
+            break;
+        case 8:
+            if (f = (f = $(h).val()).replace(/\,/g, ""), "" != p) {
+                if (!(p >= 48 && p <= 57 || 13 == p || 8 == p || 9 == p || 46 == p)) return !1
+            } else f >= 0 || (u = 0);
+            break;
+        case 9:
+            var f;
+            if (f = (f = $(h).val()).replace(/\,/g, ""), "" != p) {
+                if (!(p >= 48 && p <= 57 || 13 == p || 8 == p || 9 == p || 46 == p)) return !1
+            } else f > 0 || (u = 0);
+            break;
+        case 10:
+            if ("" != p) {
+                if (!(p >= 48 && p <= 57 || 13 == p || 8 == p || 9 == p || 46 == p)) return !1
+            } else $(h).val() >= 0 || (u = 0);
+            break;
+        case 11:
+            if ("" != p) {
+                if (!(p >= 48 && p <= 57 || 13 == p || 8 == p || 9 == p || 46 == p)) return !1
+            } else $(h).val() > 0 || (u = 0);
+            break;
+        case 13:
+            $(h).val().match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/) || (u = 0);
+            break;
+        case 14:
+            if ("" != p) {
+                if (!(p >= 48 && p <= 57 || 13 == p || 8 == p || 9 == p)) return $(h).addClass("error"), $("#mobile_validator").addClass("validate_fail"), !1
+            } else {
+                var m = $(h).val().split("");
+                m = m[0], $(h).val() > 0 && parseInt(m) >= 7 && 10 == $(h).val().length || (u = 0)
+            }
+    }
+    return u
+}
+
+
+
+
+
+function formatValidatorNew(e, a, t, r, n, i, o, l, s, d, c) {
+    var u = 1,
+        h = "";
+    "" != a ? h = $(a) : "" != t ? h = $("." + t) : "" != r ? h = $('[name="' + t + '"]') : "" != n && (h = $("#" + n));
+    var p = $.trim($(h).val());
+    if ("" == e) {
+        if ("" == p) return 0;
+        if ("" != s && p.length < parseInt(s)) return 0;
+        if ("" != d && p.length > parseInt(d)) return 0;
+        if ("" != o) {
+            var v = $(h).val().replace(/\,/g, "");
+            if ("0" == v.substring(0, 1) && (v = v.substring(1, v.length)), "" != o && parseInt(v) < parseInt(o)) return 0
+        }
+        if ("" != l && (v = $(h).val().replace(/\,/g, ""), "" != l && parseInt(v) > parseInt(l))) return 0
+    }
+    var f = "";
+    "" != e && (f = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode);
+    switch (i) {
+        case 1:
+            var m = /^[a-zA-Z]+$/g;
+            if ("" != e) return 37 != e.charCode && 38 != e.charCode && 39 != e.charCode && 40 != e.charCode && (f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f);
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 2:
+            m = /^[a-zA-Z][a-zA-Z. ]*[a-zA-Z]$/g;
+            if ("" != e) return 37 != e.charCode && 38 != e.charCode && 39 != e.charCode && 40 != e.charCode && (f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 32 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f);
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 3:
+            m = /^[a-zA-Z][!@#\$%\^&\*\(\)\-_\+=\[\{\]\}:;"'\|\\\/?,.a-zA-Z ]*[!@#\$%\^&\*\(\)\-_\+=\[\{\]\}:;"'\|\\\/?,.a-zA-Z]$/g;
+            if ("" != e) {
+                if (96 == f || 126 == f || f >= 48 && f <= 57) return !1;
+                if (32 == f) {
+                    var _ = String.fromCharCode(f),
+                        g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 4:
+            m = /^[1-9]+$/g;
+            if ("" != e) return 37 != e.charCode && 38 != e.charCode && 39 != e.charCode && 40 != e.charCode && (f > 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f);
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 5:
+            if ("" != e) return 37 != e.charCode && 38 != e.charCode && 39 != e.charCode && 40 != e.charCode && 46 != e.charCode && (f >= 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f || 46 == f);
+            u = (m = /^[0-9]+$/g).test($(h).val()) ? 1 : 0;
+            break;
+        case 6:
+            m = /^[0-9][0-9 ]*[0-9]+$/g;
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || 32 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if (32 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 7:
+            m = /^[0-9][0-9,]*[0-9]+$/g;
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || 44 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if (44 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 8:
+            m = /^[1-9][0-9,]*$/g;
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || 44 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if ($(h).val().length < 1 && 48 == f) return !1;
+                if (44 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 9:
+            m = /^[a-zA-Z0-9]+$/g;
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 10:
+            m = /^[a-zA-Z0-9][a-zA-Z0-9 ]*[a-zA-Z0-9]+$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f || 32 == f)) return !1;
+            if (32 == f) {
+                _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+            }
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 11:
+            m = /^[!@#\$%\^&\*\(\)\-_\+=\[\{\]\}:;"'\|\\\/?,.a-zA-Z0-9]+$/g;
+            if ("" != e) {
+                if (96 == f || 126 == f || 32 == f) return !1
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 12:
+            m = /^[a-zA-Z0-9][!@#\$%\^&\*\(\)\-_\+=\[\{\]\}:;"'\|\\\/?,.a-zA-Z0-9 ]*[!@#\$%\^&\*\(\)\-_\+=\[\{\]\}:;"'\|\\\/?,.a-zA-Z0-9]+$/g;
+            if ("" != e) {
+                if (96 == f || 126 == f) return !1;
+                if (32 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 13:
+            m = /^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g;
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || 47 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if ($(h).val().length >= 10 && (f >= 48 && f <= 57 || 47 == f)) return !1;
+                if ((0 == $(h).val().length || "" == $(h).val()) && f >= 48 && f <= 57) return f >= 48 && f <= 51;
+                if (2 == $(h).val().length && f >= 48 && f <= 57) return !1;
+                if (5 == $(h).val().length && f >= 48 && f <= 57) return !1;
+                if ($(h).val().length < 2 && 47 == f) return !1;
+                if ($(h).val().length >= 3 && $(h).val().length < 5 && 47 == f) return !1;
+                if ($(h).val().length >= 6 && 47 == f) return !1;
+                if ($(h).val().length >= 6 && f >= 48 && f <= 57) return 6 == $(h).val().length && (49 == f || 50 == f) || (7 == $(h).val().length && 1 == $(h).val()[6] && (56 == f || 57 == f) || (7 == $(h).val().length && 2 == $(h).val()[6] && 48 == f || $(h).val().length >= 8 && f >= 48 && f <= 57));
+                if ($(h).val().length >= 3 && f >= 48 && f <= 57) {
+                    if (3 == $(h).val().length) return f >= 48 && f <= 49;
+                    if (4 == $(h).val().length) return 1 == $(h).val()[3] && f >= 48 && f < 51 || 0 == $(h).val()[3] && f > 48 && f <= 57
+                }
+                if (1 == $(h).val().length && f >= 48 && f <= 57) return (1 == $(h).val()[0] || 2 == $(h).val()[0] || 0 == $(h).val()[0]) && f >= 48 && f <= 57 || 3 == $(h).val()[0] && f >= 48 && f <= 49
+            } else u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 14:
+            m = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 45 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if ($(h).val().length >= 10 && (f >= 48 && f <= 57 || 45 == f)) return !1;
+            if (4 == $(h).val().length && f >= 48 && f <= 57) return !1;
+            if ((0 == $(h).val().length || "" == $(h).val()) && (48 == f || f >= 51)) return !1;
+            if (1 == $(h).val().length && f >= 48 && f <= 57) {
+                if (1 == $(h).val() && f < 56) return !1;
+                if (2 == $(h).val() && 48 != f) return !1
+            }
+            if (5 == $(h).val().length && f >= 48 && f <= 57 && !(f >= 48 && f <= 49)) return !1;
+            if (6 == $(h).val().length && f >= 48 && f <= 57) return 1 == $(h).val()[5] && f >= 48 && f < 51 || 0 == $(h).val()[5] && f > 48 && f <= 57;
+            if (8 == $(h).val().length && f >= 48 && f <= 57 && !(f >= 48 && f <= 51)) return !1;
+            if (9 == $(h).val().length && f >= 48 && f <= 57) return (1 == $(h).val()[8] || 2 == $(h).val()[8] || 0 == $(h).val()[8]) && f >= 48 && f <= 57 || 3 == $(h).val()[8] && f >= 48 && f <= 49;
+            if (($(h).val().length < 4 || 5 == $(h).val().length || 6 == $(h).val().length || 8 == $(h).val().length || 9 == $(h).val().length) && 45 == f) return !1;
+            if (7 == $(h).val().length && f >= 48 && f <= 57) return !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 15:
+            m = /^(0[1-9]|[1-2][0-9]|3[0-1])$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if (f >= 48 && f <= 57 && parseInt($(h).val() + (f - 48)) > 31) return document.getElementById(n).value = 31, !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 16:
+            m = /^([1-9]|[1-2][0-9]|3[0-1])$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f > 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if (f >= 48 && f <= 57 && parseInt($(h).val() + (f - 48)) > 31) return document.getElementById(n).value = 31, !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 17:
+            m = /^(0[1-9]|1[0-2])$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if (f >= 48 && f <= 57 && parseInt($(h).val() + (f - 48)) > 12) return document.getElementById(n).value = 12, !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 18:
+            m = /^([1-9]|1[0-2])$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if (f >= 48 && f <= 57 && parseInt($(h).val() + (f - 48)) > 12) return document.getElementById(n).value = 12, !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 19:
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if (f >= 48 && f <= 57 && (0 == $(h).val().length || "" == $(h).val()) && f <= 53) return !1
+            } else {
+                if ((m = /^[6-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/g).test($(h).val())) u = $.inArray(parseInt(h.val()), mobile_number_array) >= 0 ? 0 : 1;
+                else u = 0
+            }
+            break;
+        case 20:
+            if ("" != e) {
+                if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+                if (!(f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || 64 == f || 46 == f || 95 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+                if (64 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else {
+                if ((m = /^[a-zA-Z0-9_\-\.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/g).test($(h).val()))
+                    if ($.inArray($(h).val(), email_Array) >= 0) u = 0;
+                    else {
+                        var C = $(h).val().split("@");
+                        if (C[0].length < 2) u = 0;
+                        else u = C[1].split(".")[0].length < 2 ? 0 : 1
+                    } else u = 0
+            }
+            break;
+        case 21:
+            m = /^[a-zA-Z][a-zA-Z][a-zA-Z][pP][a-zA-Z][0-9][0-9][0-9][0-9][a-zA-Z]$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if (f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122) {
+                if ($(h).val().length >= 5 && $(h).val().length <= 8 && (f >= 65 && f <= 90 || f >= 97 && f <= 122)) return !1;
+                if (9 == $(h).val().length && f >= 48 && f <= 57) return !1;
+                if (10 == $(h).val().length) return !1
+            }
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 22:
+            m = /^[-+]?[0-9]*\.?[0-9]+$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 45 == f || 46 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if ($(h).val().indexOf(".") >= 1 && 46 == f) return !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 23:
+            m = /^[-+]?[1-9]+\.?[0-9]+$/g;
+            if (37 == e.charCode || 38 == e.charCode || 39 == e.charCode || 40 == e.charCode) return !1;
+            if (!(f >= 48 && f <= 57 || 46 == f || 8 == f || 9 == f || 37 == f || 38 == f || 39 == f || 40 == f)) return !1;
+            if ($(h).val().indexOf(".") >= 1 && 46 == f) return !1;
+            if (!("" != $(h).val() && 0 != $(h).val().length || 48 != f && 46 != f)) return !1;
+            u = m.test($(h).val()) ? 1 : 0;
+            break;
+        case 24:
+            if (92 == e.charCode) return !1;
+            if (92 == f) return !1;
+            break;
+        case 25:
+            m = /^[a-zA-Z0-9 \/\\.,\[\]][a-zA-Z0-9 \\.,\[\]]*$/g;
+            if ("" != e) {
+                if (!(f >= 48 && f <= 57 || f >= 65 && f <= 90 || f >= 97 && f <= 122 || 8 == f || 9 == f || 32 == f || 91 == f || 92 == f || 93 == f || 44 == f || 46 == f || 47 == f)) return !1;
+                if (32 == f) {
+                    _ = String.fromCharCode(f), g = $(h).val().lastIndexOf(_);
+                    if (parseInt($(h).val().length) - parseInt(g) == 1) return !1
+                }
+            } else u = m.test($(h).val()) ? 1 : 0
+    }
+    return u
+}
+
+function digitToWordConvertor(e) {
+ e = Math.floor(e);
+ var a = new String(e);
+ if (numReversed = a.split(""), actnumber = numReversed.reverse(), !(Number(e) >= 0)) return !1;
+ if (0 == Number(e)) return "";
+ if (actnumber.length > 11) return !1;
+ var t = ["Zero", " One", " Two", " Three", " Four", " Five", " Six", " Seven", " Eight", " Nine"],
+  r = ["Ten", " Eleven", " Twelve", " Thirteen", " Fourteen", " Fifteen", " Sixteen", " Seventeen", " Eighteen", " Nineteen"],
+  n = ["dummy", " Ten", " Twenty", " Thirty", " Forty", " Fifty", " Sixty", " Seventy", " Eighty", " Ninety"],
+  o = numReversed.length,
+  l = new Array,
+  s = "";
+ for (j = 0, i = 0; i < o; i++) {
+  switch (i) {
+   case 0:
+    0 == actnumber[i] || 1 == actnumber[i + 1] ? l[j] = "" : l[j] = t[actnumber[i]], l[j] = l[j] + " Only";
+    break;
+   case 1:
+    d();
+    break;
+   case 2:
+    0 == actnumber[i] ? l[j] = "" : 0 != actnumber[i - 1] && 0 != actnumber[i - 2] ? l[j] = t[actnumber[i]] + " Hundred and" : l[j] = t[actnumber[i]] + " Hundred";
+    break;
+   case 3:
+    0 == actnumber[i] || 1 == actnumber[i + 1] ? l[j] = "" : l[j] = t[actnumber[i]], (0 != actnumber[i + 1] || actnumber[i] > 0) && (l[j] = l[j] + " Thousand");
+    break;
+   case 4:
+    d();
+    break;
+   case 5:
+    0 == actnumber[i] || 1 == actnumber[i + 1] ? l[j] = "" : l[j] = t[actnumber[i]], (0 != actnumber[i + 1] || actnumber[i] > 0) && (l[j] = l[j] + " lac");
+    break;
+   case 6:
+    d();
+    break;
+   case 7:
+    0 == actnumber[i] || 1 == actnumber[i + 1] ? l[j] = "" : l[j] = t[actnumber[i]], (0 != actnumber[i + 1] || actnumber[i] > 0) && (l[j] = l[j] + " crore");
+    break;
+   case 8:
+    d();
+    break;
+   case 9:
+    0 == actnumber[i] || 1 == actnumber[i + 1] ? l[j] = "" : l[j] = t[actnumber[i]], l[j] = l[j] + " billion";
+    break;
+   case 10:
+    d()
+  }
+  j++
+ }
+
+ function d() {
+  0 == actnumber[i] ? l[j] = "" : 1 == actnumber[i] ? l[j] = r[actnumber[i - 1]] : l[j] = n[actnumber[i]]
+ }
+ for (l.reverse(), i = 0; i < l.length; i++) s += l[i];
+ return s = s.toLowerCase(), s = (s = $.trim(s)).substring(0, 1).toUpperCase() + s.substring(1, s.length), RUPEE + " " + s
+}
+
+function convertNumberToWords(amount) {
+    var words = new Array();
+    words[0] = '';
+    words[1] = 'One';
+    words[2] = 'Two';
+    words[3] = 'Three';
+    words[4] = 'Four';
+    words[5] = 'Five';
+    words[6] = 'Six';
+    words[7] = 'Seven';
+    words[8] = 'Eight';
+    words[9] = 'Nine';
+    words[10] = 'Ten';
+    words[11] = 'Eleven';
+    words[12] = 'Twelve';
+    words[13] = 'Thirteen';
+    words[14] = 'Fourteen';
+    words[15] = 'Fifteen';
+    words[16] = 'Sixteen';
+    words[17] = 'Seventeen';
+    words[18] = 'Eighteen';
+    words[19] = 'Nineteen';
+    words[20] = 'Twenty';
+    words[30] = 'Thirty';
+    words[40] = 'Forty';
+    words[50] = 'Fifty';
+    words[60] = 'Sixty';
+    words[70] = 'Seventy';
+    words[80] = 'Eighty';
+    words[90] = 'Ninety';
+    amount = amount.toString();
+    var atemp = amount.split(".");
+    var number = atemp[0].split(",").join("");
+    var n_length = number.length;
+    var words_string = "";
+    if (n_length <= 9) {
+        var n_array = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+        var received_n_array = new Array();
+        for (var i = 0; i < n_length; i++) {
+            received_n_array[i] = number.substr(i, 1);
+        }
+        for (var i = 9 - n_length, j = 0; i < 9; i++, j++) {
+            n_array[i] = received_n_array[j];
+        }
+        for (var i = 0, j = 1; i < 9; i++, j++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                if (n_array[i] == 1) {
+                    n_array[j] = 10 + parseInt(n_array[j]);
+                    n_array[i] = 0;
+                }
+            }
+        }
+        value = "";
+        for (var i = 0; i < 9; i++) {
+            if (i == 0 || i == 2 || i == 4 || i == 7) {
+                value = n_array[i] * 10;
+            } else {
+                value = n_array[i];
+            }
+            if (value != 0) {
+                words_string += words[value] + " ";
+            }
+            if ((i == 1 && value != 0) || (i == 0 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Crores ";
+            }
+            if ((i == 3 && value != 0) || (i == 2 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Lakhs ";
+            }
+            if ((i == 5 && value != 0) || (i == 4 && value != 0 && n_array[i + 1] == 0)) {
+                words_string += "Thousand ";
+            }
+            if (i == 6 && value != 0 && (n_array[i + 1] != 0 && n_array[i + 2] != 0)) {
+                words_string += "Hundred and ";
+            } else if (i == 6 && value != 0) {
+                words_string += "Hundred ";
+            }
+        }
+        words_string = words_string.split("  ").join(" ");
+    }
+    return words_string;
+}
+	function cleanInt(x) {
+		x = Number(x);
+		return x >= 0 ? Math.floor(x) : Math.ceil(x);
+	}
+
+unformatMoney = function(e) {
+	return void 0 != e && "" != e && "-1" != e.toString().indexOf(",") ? ("" + e).replace(/\,/g, "") : e
+}
+
+
+function getSlider(e, a) {
+	var t = 0;
+	$slider_array = [], $(".awesome-slider").each(function() {
+	t++,
+	$slider_array[t] = $(this).slider({
+		max: parseInt($(this).attr("max")),
+		min: parseInt($(this).attr("min")),
+		value: parseInt($(this).attr("value")),
+		step: parseInt($(this).attr("step")),
+		animate: !0,
+		range: "min",
+		id_type: t,
+		slide: function(e, a)
+		{
+			unformatMoney
+			var t = $(this).attr("id").split("_");
+			$("#slider_"+t[1]+"_txt").val(NewMoneyFormatInr(a.value)),
+			$("#slider_"+t[1]+"_inword").html(digitToWordConvertor(a.value)),
+			$("#slider_"+t[1]+"_inword").show()		
+			
+	   }
+	}).draggable(),
+	$slider_array[t].slider("pips", {
+	   rest: "label",
+	   //prefix: "Rs."
+	}).slider("float").draggable(),
+		$(document).on("keyup", "#slider_1_txt,#slider_2_txt,#slider_3_txt,#slider_4_txt,#slider_5_txt,#slider_6_txt,#slider_7_txt,#slider_8_txt,#slider_9_txt,#slider_10_txt,#slider_11_txt,#slider_12_txt,#slider_13_txt,#slider_14_txt,#slider_15_txt,#slider_16_txt,#slider_17_txt,#slider_18_txt,#slider_19_txt,#slider_20_txt,#slider_21_txt,#slider_22_txt,#slider_23_txt,#slider_24_txt,#slider_25_txt,#slider_26_txt,#slider_27_txt,#slider_28_txt,#slider_29_txt,#slider_30_txt,#slider_31_txt,#slider_32_txt,#slider_33_txt,#slider_34_txt,#slider_35_txt,#slider_36_txt,#slider_37_txt,#slider_38_txt,#slider_39_txt,#slider_40_txt,#slider_41_txt,#slider_42_txt,#slider_43_txt,#slider_44_txt,#slider_45_txt,#slider_46_txt,#slider_47_txt", function(t) {
+			var r = $(e).attr($(this).attr("name"));
+			void 0 !== r && !1 !== r ? changeSliderValue2(t, $(this), e) : changeSliderValue2(t, $(this), a),
+			$(this).val(NewMoneyFormatInr($(this).val())); //Add 0 value if not amount
+			//$(this).val().replace(/[^0-9,.]/g, ""); // remove all values from input amount
+			var n = $(this).attr("id").split("_")[1];
+			0 != $(this).val() ? ($("#slider_"+n+"_inword").html(digitToWordConvertor(unformatMoney($(this).val()))),
+			$("#slider_"+n+"_inword").show()) : ($("#slider_"+n+"_inword").html(),
+			$("#slider_"+n+"_inword").hide())
+	})
+ })
+}	
+	
+getCalculatorSlider = function() {
+    var e = 0;
+    $slider_array = [],
+	$(".awesome-slider").each(function() {
+        var a = parseInt($(this).attr("max")),
+            t = parseInt($(this).attr("min")),
+            r = $(this).attr("value"),
+            n = parseFloat($(this).attr("step")),
+            i = $(this).attr("prefix"),
+            o = $(this).attr("suffix");
+			e++,
+			$slider_array[e] = $(this).slider({
+            max: a,
+            min: t,
+            value: r,
+            step: n,
+            animate: !0,
+            range: "min",
+            id_type: e,
+            slide: function(e, a) {
+                var t = $(this).attr("id").split("_"),
+                    r = "";
+				$(".slider_" + t[1] + "_span").html(r + " " + a.value + " " + $(this).attr("suffix"),
+				$(".slider_" + t[1] + "_txt").val(" " + NewMoneyFormatInr(a.value)))
+            },
+            
+        }).draggable(), $slider_array[e].slider("pips", {
+            rest: "label",
+            prefix: i,
+            suffix: o
+        }).slider("float").draggable(), $(document).on("keypress", ".slider_" + e + "_txt", function(e) {
+            return formatValidatorNew(e, $(this), "", "", "", 22, "", "", "", "10", "")
+        }),
+		
+		$(document).on("keyup", ".slider_" + e + "_txt", function(e) {
+            var a = $(this).val().replace(/[^0-9,.]/g, "");
+            if ("" == a && (a = 0), $(this).val(a), "function" == typeof changeSliderValue2) return $(this).changeSliderValue2(e)
+        }),
+	
+		$(document).on("blur", ".slider_" + e + "_txt", function(e) {
+            var a = $(this).val().replace(/[^0-9,.]/g, "");
+            if ("" != a && 0 != a.length || (a = 0), $(this).val(a), "function" == typeof changeSliderValue2) return $(this).changeSliderValue2(e)
+        })
+    })
+};
+
+var saveRes = null;
+var mult = false,
+prev = 0;
+
+$(function () {
+   getSlider();    
+});
+
+$.fn.extend({
+	
+	changeSliderValue2: function (event) {
+		changeSliderValue2(event, $(this));		        
+    }
+	
+});

@@ -30,7 +30,6 @@ class ApplyActivity : AppCompatActivity() {
         setContentView(R.layout.activity_apply)
         option = findViewById<Spinner>(R.id.spinnertype)
         result = findViewById<TextView>(R.id.tvtype)
-
         employe = findViewById<Spinner>(R.id.spinneremploye)
         tvemp = findViewById(R.id.tvemployee)
 

@@ -1,0 +1,404 @@
+
+
+form .form-group .input-error {
+	border: 1px solid !important;
+	border-color: #d03e3e !important;
+	color: #d03e3e !important;
+}
+form.loan-registration-form .fieldset, #allbanksupport-area, #loandocument-area .bank-information-row {
+	display: none;
+} 
+
+p.mb-0 {
+    color: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+}
+p.mb-0 span {
+    border-bottom: 1px solid;
+}
+
+.emi-breadcrumb{
+	padding: 8px ;
+	margin-bottom: 0px;
+	list-style: none;
+	background-color: transparent;
+	border-radius: 4px;
+	top: 10px;
+
+}
+
+ol.breadcrumb.emi-breadcrumb li a {
+    color: black;
+    font-family: 'Arvo', serif;
+    font-weight: 600;
+}
+
+.breadcrumb > .active {
+    color: #fff;
+}
+
+nav.breadcrumb-padding {
+    padding-bottom: 18px;
+    width: 100%;
+}
+
+span.file_error {
+    font-family: 'Oswald' , sans-serif;
+    color: #ca4652;
+}
+
+.emi-breadcrumb ol.breadcrumb{
+   background-color: #ffffff;
+}
+
+blockquote {
+    margin: 0px 139px 20px;    
+}
+
+#loandocument-area {
+    display: none;
+} 
+
+
+.word-number-format{ padding: 0px !important;  margin: -10px 0 15px 0 ; color: #cecece;     text-transform: capitalize !important;
+    font-size: 14px !important;
+}
+
+
+
+
+.process-error-message { display: none; font-size: 20px; text-align:center; margin-top:20px;}
+.age-error-message { display: none; font-size: 20px; margin-top:20px; line-height: 0.8; text-align: left;}
+.otp_error { display: none; font-size: 20px; margin-top:20px; line-height: 0.8; text-align: left;}
+.term_and_condition_error { display: none; font-size: 20px; line-height: 0.8; text-align: left;}
+
+/** Calc**/
+.loan-table{ padding:25px 100px; color:#333; font-size: 14px; }
+.loan-table ul li, ol li { font-family: inherit; font-size: 14px; line-height: 1.9; font-weight: 300;} 
+
+
+
+
+/*** Result Page **/
+.table > tbody > tr > th { padding: 8px; line-height: 1.3; vertical-align: top; border-top: 1px solid #ddd; font-weight:normal;
+	color:#000; }	
+.table-result{ margin:0px 0px 15px 0px ;} .table-result .p{ color:#000;} 
+.table-result > tbody:nth-of-type(2n+1) { background-color: #f5f5f5;}	
+.table-result img{ margin-bottom:7px;} .table-result tbody{ border:0px;}
+.star span{color:#ffd200;}
+.team2-grid { margin: 25px 0 65px 0; }
+/*** Ends **/
+
+/** Calc**/
+.loan-table{ padding:15px; color:#333; font-size: 14px; }
+.loan-table ul li, ol li {    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.6;
+    /* padding-bottom: 5px; */
+    font-weight: 300;}
+
+
+
+
+/**
+*
+*Form Tab Active Style Css
+*/
+.active {   
+    color: #173f5f !important;   
+    color: #173f5f; 
+}
+
+.calc-nav ul li, .calc-nav ul li:active, .calc-nav ul li:focus{
+    color: black;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 600;
+    font-family: 'Arvo' , serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    letter-spacing: 1px;	
+}
+
+
+.text-muted-loan{
+    color: #fff;
+}
+
+    #mudrahome_eligibility_box{
+        margin-top: 5%;
+    }
+
+	#mudrahome_amt_num_box{
+          display: block;
+    margin: 0 auto;
+    /* padding: 0.5%; */
+    /* line-height: 0.2; */
+    background-image: none;
+    border-radius: 7px;
+    /* background-color: #20639b; */
+    /* color: white; */
+    width: 75%;
+    text-align: center;
+    /* padding-left: 10%; */
+    /* margin-top: 6%; */
+    font-size: 17px;
+    font-family: 'Arvo' , serif;
+    }
+	
+	
+	#mudrahome_amt_word_box{
+		color: #000;
+		font-size: 12px;
+		line-height: 18px;
+		margin: 20px 0;
+		text-transform: uppercase;
+		font-family: 'Arvo',serif;
+		font-weight: normal;
+		text-decoration: none;
+		padding: 0px;
+	}
+
+	.credit-score fieldset {
+    display: none;
+}
+
+
+/**
+*
+*	Admin Login Error message css
+*/
+
+.admin_status_error{
+	padding:0px 42px 0px 35px;
+}
+.alert-border-radius{
+	border-radius: 12px !important;
+}
+
+
+.h2loanheading{
+    font-family: 'Arvo', sans-serif;
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 66px;
+    text-transform: uppercase;
+    /* padding: 0 30px 30px 30px; */
+    text-align: center;
+    margin: 0px;
+}
+
+
+
+
+/*
+*	Spinner loading css
+*	
+*/
+
+ .spinner-container{
+            width:65px;
+            height:65px;
+            margin:0 auto;
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:-50%,-50%
+        }
+        .spinner-container .spinner{
+            animation:rotator 1.4s linear infinite;
+            display: none;
+        }
+        .spinner-container .spinner span{
+            font-size:12px;
+            display:inline-block;
+            padding-top:10px
+        }
+        .spinner-container .path{
+            stroke-dasharray:187;
+            stroke-dashoffset:0;
+            transform-origin:center;
+            animation:dash 1.4s ease-in-out infinite,colors 5.6s ease-in-out infinite
+        }
+        @keyframes rotator{
+            0%{
+                transform:rotate(0deg)
+            }
+            100%{
+                transform:rotate(270deg)
+            }
+        }
+        @keyframes colors{
+            0%{
+                stroke:#f24a5a
+            }
+            25%{
+                stroke:#f24a5a
+            }
+            50%{
+                stroke:#13aea7
+            }
+            75%{
+                stroke:#f24a5a
+            }
+            100%{
+                stroke:#13aea7
+            }
+        }
+        @keyframes dash{
+            0%{
+                stroke-dashoffset:187
+            }
+            50%{
+                stroke-dashoffset:46.75;
+                transform:rotate(135deg)
+            }
+            100%{
+                stroke-dashoffset:187;
+                transform:rotate(450deg)
+            }
+        }
+        .mudrahome-loading-new{
+            width:100%;
+            height:100vh;
+            text-align:center;
+            position:fixed;
+            top:0;
+            z-index:9999;
+            _background:rgba(255, 180, 180, 0.92);
+            _background:rgba(255,255,255,0.8);
+        }
+        .gm-style-iw + div{
+            display:none;
+        }
+
+
+
+
+        /**
+        *   loading-spinner
+        */
+        .loading-message.loading-message-boxed {
+            border: 1px solid #ddd;
+            background-color: #eee;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 8px rgba(0,0,0,.1);
+            -moz-box-shadow: 0 1px 8px rgba(0,0,0,.1);
+            box-shadow: 0 1px 8px rgba(0,0,0,.1);
+            
+        }
+
+        .loading-message {
+            display: inline-block;
+            padding: 10px;
+            margin: 0 auto;
+            color: #000!important;
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .loading-message, .page-loading {
+            min-width: 125px;
+            vertical-align: middle;
+        }
+
+        .loading-message>span {
+            line-height: 20px;
+            vertical-align: middle;
+        }
+
+        .emi-calc-box-other
+        {
+            background-color: rgb(4, 30, 45);
+            opacity: 0.05;
+        }    
+        /*ing: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(85, 85, 85);
+    opacity: 0.05;
+    cursor: wait;
+    position: absolute;*/
+
+
+    /**
+     *  Style Input file design in document pool section
+     */
+
+     .btn-file {
+        position: relative;
+        overflow: hidden;
+    }
+    .btn-file input[type=file] {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        font-size: 100px !important;
+        text-align: right !important;
+        filter: alpha(opacity=0) !important;
+        opacity: 0 !important;
+        outline: none !important;   
+        cursor: pointer !important;
+        display: block !important;
+    }
+    .btn-file{
+        float: left;
+    }
+
+
+    .eligible-loan{
+            text-align: center !important;
+            color: #173f5f !important;
+            font-weight: 600 !important;
+            font-size: 14px !important;
+            text-transform: uppercase !important;
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.66) !important; */
+            /* letter-spacing: 2px !important; */
+        
+    }
+
+
+/*.login_trems{
+    font-size: 9pt !important;
+    padding-bottom: 0px !important;
+    line-height: 0px !important;
+    margin-top: 23px !important;
+}*/
+label.login_trems {
+    font-size: 12px !important;
+    padding-bottom: 0px !important;
+    line-height: 14px !important;
+    margin-top: 12px !important;
+    text-align: left;
+    font-weight: bold;
+    }
+
+.invalid-feedback{
+    color: #e52e2e !important;
+}
+
+a.credit-score{
+	color: #71dce2;
+    font-weight: 700;
+}	
+
+a.credit-score:hover {
+    color: #241fa8;
+}
+/* CCWS RK */
+.score .btn2{ padding:10px 11px; color: #fff; background: #20659b;     font-size: 13px;  font-weight: 400;}
+.score .btn2:hover, .score .btn2:focus{  color: #fff; background: #173f5f; }
+.result-box2 table table {     width: 98%;     margin: 0px auto; }
+.result-box2 .score > tbody > tr > td {     padding: 10px;  vertical-align: middle;}
+.score .img-rounded { border-radius: 6px; margin-right: 10px; }    

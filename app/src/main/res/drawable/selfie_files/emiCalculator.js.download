@@ -1,0 +1,62 @@
+var saveRes = null;
+var mult = false,
+prev = 0;
+
+$(function () {
+    $(document).on("keydown", "input[type='text']", function (e) {
+        if (!mult) {
+            mult = true;
+            prev = e.which;
+            setTimeout(function () {
+                mult = false;
+            }, 50)
+        } else if (prev != e.which) {
+            mult = false;
+        } else {
+            return false;
+        }
+    });
+	
+    getCalculatorSlider();
+    calculateData();
+    $(document).on("click", ".ui-slider-label ", function () {
+        calculateData();
+    });
+	
+	$(document).on("chagne", ".ui-slider-label ", function () {
+        calculateData();
+    });
+    
+    
+
+});
+
+$.fn.extend({
+	
+	changeSliderValue: function (event) {
+		changeSliderValue(event, $(this));
+		calculateData();        
+    }
+	
+});
+
+function calculateData() {
+	
+        var emi2 = '';
+        var emi = '';
+        var tpa = '';
+        
+		emi = calculateEmi(unformatMoney($(".slider_1_txt").val()), $(".slider_2_txt").val(), ($(".slider_3_txt").val() * 12));
+        
+		tpa = calculatetotalalAmount(unformatMoney($(".slider_1_txt").val()), $(".slider_2_txt").val(), ($(".slider_3_txt").val() * 12));
+            
+        
+    
+		if (emi == "-") {
+			$("#emi_result").html("-");
+			$("#tpa_result").html("-");
+		}
+		$("#emi_result").html("Yearly Instalment Rs. "+NewMoneyFormatInr(emi));
+		$("#tpa_result").html(NewMoneyFormatInr(tpa));
+}
+ 

@@ -25,6 +25,7 @@
             app:cardCornerRadius="25dp">
 
             <LinearLayout
+                android:background="#66B88A58"
                 android:layout_width="match_parent"
                 android:layout_height="674dp"
                 android:orientation="vertical">

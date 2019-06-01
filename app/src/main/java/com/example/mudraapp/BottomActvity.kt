@@ -3,12 +3,15 @@ package com.example.mudraapp
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.AppCompatActivity
+import android.view.Gravity
 import kotlinx.android.synthetic.main.activity_bottom_actvity.*
 import kotlinx.android.synthetic.main.activity_bottom_actvity.apply
 import kotlinx.android.synthetic.main.activity_bottom_actvity.btnmenu
 import kotlinx.android.synthetic.main.activity_bottom_actvity.click
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_navigation.*
 
 class BottomActvity : AppCompatActivity() {
 
@@ -56,6 +59,15 @@ class BottomActvity : AppCompatActivity() {
         }
         btnmenu.setOnClickListener {
             startActivity(Intent(baseContext, MenuActivity::class.java))
+        }
+
+        navigationmenu.setOnClickListener {
+            if (!drawer_layout.isDrawerOpen(GravityCompat.START))
+                drawer_layout.openDrawer(Gravity.START)
+
+            else
+                drawer_layout.closeDrawer(Gravity.END)
+
         }
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }

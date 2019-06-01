@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#e0f2f1"
     android:layout_height="match_parent"
     tools:context=".ReferEarn">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="117dp"
+        android:layout_height="153dp"
         android:background="@drawable/navbackgrnd"
         android:orientation="horizontal">
 
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="86dp"
             android:layout_height="65dp"
-            android:layout_marginLeft="9dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="9dp"
             app:srcCompat="@drawable/ic_star_black_24dp" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -33,12 +34,12 @@
     </LinearLayout>
 
     <android.support.v7.widget.AppCompatImageView
-        android:layout_width="383dp"
-        android:layout_height="170dp"
+        android:layout_width="385dp"
+        android:layout_height="179dp"
         android:layout_gravity="center"
-        android:background="@drawable/refer"
         android:focusable="true"
-        android:outlineAmbientShadowColor="#55F5DE45" />
+        android:outlineAmbientShadowColor="#55F5DE45"
+        app:srcCompat="@drawable/refer" />
 
     <android.support.design.card.MaterialCardView
         android:layout_width="331dp"

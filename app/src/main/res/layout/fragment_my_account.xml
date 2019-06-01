@@ -1,35 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="#2C91A3"
-    android:scrollbarSize="@dimen/activity_vertical_margin"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#2C91A3"
+    android:orientation="vertical"
+    android:scrollbarSize="@dimen/activity_vertical_margin"
     tools:context=".MyAccountFragment">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/viewflip"
-        android:layout_width="350dp"
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="11dp">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="405dp"
         android:layout_height="173dp"
-        android:layout_gravity="center"
-        android:background="#2C91A3"
-        android:screenReaderFocusable="true"
+        android:layout_gravity="center">
 
-        android:src="@drawable/checkcreditmobile">
-
-    </pl.droidsonroids.gif.GifImageView>
+    </android.support.v4.view.ViewPager>
 
     <android.support.design.card.MaterialCardView
-        android:layout_width="380dp"
+        android:layout_width="320dp"
+        android:layout_height="209dp"
         android:layout_margin="16dp"
-        android:layout_height="210dp"
-        app:cardElevation="30dp"
-        android:outlineSpotShadowColor="#661D0A1D"
         android:outlineAmbientShadowColor="#661D0A1D"
-        app:cardBackgroundColor="#0B5374"
-        app:cardCornerRadius="20dp">
+        android:outlineSpotShadowColor="#661D0A1D"
+        app:cardBackgroundColor="#16658A"
+        app:cardMaxElevation="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp">
 
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="370dp"
@@ -37,17 +42,16 @@
             android:layout_margin="8dp"
             android:text="Your Registered Mobile Number:"
             android:textSize="20dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtmobile"
             android:layout_width="300dp"
             android:layout_height="44dp"
-            android:textStyle="bold"
-            android:textSize="22dp"
+            android:layout_marginTop="50dp"
             android:inputType="number"
-            android:id="@+id/txtmobile"
-            android:layout_marginTop="50dp" />
+            android:textSize="22dp"
+            android:textStyle="bold" />
 
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="370dp"
@@ -55,8 +59,7 @@
             android:layout_marginTop="110dp"
             android:text="Your Registered EmailId:"
             android:textSize="20dp"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtemail"
@@ -70,14 +73,14 @@
     </android.support.design.card.MaterialCardView>
 
     <android.support.design.card.MaterialCardView
-        android:layout_width="380dp"
-        android:layout_margin="16dp"
+        android:layout_width="320dp"
         android:layout_height="210dp"
-        app:cardElevation="30dp"
-        android:outlineSpotShadowColor="#661D0A1D"
+        android:layout_margin="16dp"
         android:outlineAmbientShadowColor="#661D0A1D"
-        app:cardBackgroundColor="#0B5374"
-        app:cardCornerRadius="20dp">
+        android:outlineSpotShadowColor="#661D0A1D"
+        app:cardBackgroundColor="#176B91"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="30dp">
 
 
     </android.support.design.card.MaterialCardView>

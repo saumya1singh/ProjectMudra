@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:orientation="vertical"
-    android:background="#2C7B8F"
+    android:background="#2B8197"
     android:scrollbars="vertical"
     android:scrollbarSize="@dimen/activity_vertical_margin"
     android:layout_width="match_parent"
@@ -28,37 +28,37 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_marginLeft="7dp"
-                android:layout_width="37dp"
                 android:id="@+id/navigationmenu"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="18dp"
                 app:srcCompat="@drawable/ic_menu_black_24dp" />
 
             <ImageView
-                android:layout_width="232dp"
-                android:layout_height="wrap_content"
+                android:layout_width="223dp"
+                android:layout_height="49dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/mudra"
                 android:scaleType="center" />
 
-            <android.support.v7.widget.CardView
+            <!--<android.support.v7.widget.CardView-->
+               <!---->
+                <!--android:layout_width="35dp"-->
+                <!--android:layout_height="30dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginLeft="24dp"-->
+                <!--app:cardBackgroundColor="#4B9EB3"-->
+                <!--app:cardCornerRadius="10dp"-->
+                <!--app:cardElevation="20dp">-->
+
+            <ImageView
                 android:id="@+id/btnmenu"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="42dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:layout_marginLeft="24dp"
-                app:cardBackgroundColor="#4B9EB3"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="20dp">
-
-                <ImageView
-
-                    android:layout_width="34dp"
-                    android:layout_height="34dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/ic_settings_black_24dp" />
-            </android.support.v7.widget.CardView>
+                app:srcCompat="@drawable/ic_settings_black_24dp" />
+            <!--</android.support.v7.widget.CardView>-->
             <!--<ImageView-->
             <!--android:id="@+id/menu"-->
             <!--android:layout_width="50dp"-->

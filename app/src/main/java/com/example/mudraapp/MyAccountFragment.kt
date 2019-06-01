@@ -44,7 +44,7 @@ class MyAccountFragment : Fragment() {
         fragmentlist.add(FragmentB())
         val  pagerAdapter= com.example.mudraapp.ViewPagers.PagerAdapter(fragmentlist , fragmentManager )
         viewpager.adapter=pagerAdapter
-        tablayout.setupWithViewPager(viewpager)
+
     }
 
 }

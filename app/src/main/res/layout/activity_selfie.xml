@@ -11,7 +11,7 @@
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/selfiegif"
         android:layout_width="251dp"
-        android:layout_height="175dp"
+        android:layout_height="154dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:foregroundGravity="center"
@@ -46,13 +46,28 @@ Selfie Cash is especially for the Businessman who wants instant cashfor their bu
 
         />
     </android.support.design.card.MaterialCardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="39dp"
+        app:cardBackgroundColor="#f4ff81"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="142dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/getscore" />
+    </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
 
         android:layout_width="201dp"
         android:layout_height="40dp"
        android:layout_marginLeft="90dp"
 
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="29dp"
         app:cardBackgroundColor="#142480"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp">

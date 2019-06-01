@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    android:background="#551818AD"
+   
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".OnlineLoansFrag">
@@ -33,7 +33,7 @@
         android:alignmentMode="alignMargins"
         android:columnCount="2"
         android:layout_weight="8"
-        android:background="#3F51B5"
+        android:background="#64b5f6"
         android:padding="14dp"
         android:rowCount="3">
 

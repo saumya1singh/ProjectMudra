@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2E6086"
+    android:background="#ff6f00"
     android:orientation="vertical"
     android:scrollbarStyle="insideInset"
     android:scrollbars="vertical"
@@ -35,7 +35,7 @@
             android:layout_margin="7dp"
             android:background="@drawable/card"
             android:scrollbars="vertical"
-            app:cardBackgroundColor="#03a9f4"
+            app:cardBackgroundColor="#ffe082"
             app:cardCornerRadius="25dp"
             app:cardElevation="20dp"
             app:cardMaxElevation="20dp">
@@ -57,7 +57,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="369dp"
+                    android:layout_width="342dp"
                     android:layout_height="115dp"
                     android:layout_margin="8dp"
                     android:background="#b3e5fc"

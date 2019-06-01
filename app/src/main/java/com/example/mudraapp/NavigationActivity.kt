@@ -27,26 +27,27 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         when (item.itemId) {
             R.id.navigation_home -> {
 
-                startActivity(Intent(baseContext , MainActivity::class.java))
+                startActivity(Intent(baseContext, MainActivity::class.java))
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.omline_loans-> {
-                val fragment =OnlineLoansFrag()
-                supportFragmentManager.beginTransaction().replace(R.id.container , fragment).addToBackStack(null).commit()
+            R.id.omline_loans -> {
+                val fragment = OnlineLoansFrag()
+                supportFragmentManager.beginTransaction().replace(R.id.container, fragment).addToBackStack(null).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.credit -> {
-                startActivity(Intent(baseContext , CheckScore::class.java))
+                startActivity(Intent(baseContext, CheckScore::class.java))
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.homeloan->{
-                val fragment =HomeLoanFrag()
-                supportFragmentManager.beginTransaction().replace(R.id.container , fragment ).commit()
+            R.id.homeloan -> {
+//                val fragment =HomeLoanFrag()
+//                supportFragmentManager.beginTransaction().replace(R.id.container , fragment ).commit()
+                startActivity(Intent(baseContext , ReferEarn::class.java))
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.sc->{
-                val fragment=MyAccountFragment()
-                supportFragmentManager.beginTransaction().replace(R.id.container , MyAccountFragment()).addToBackStack("My Account").commit()
+            R.id.sc -> {
+                val fragment = MyAccountFragment()
+                supportFragmentManager.beginTransaction().replace(R.id.container, MyAccountFragment()).addToBackStack("My Account").commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
@@ -60,26 +61,25 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         nav_view.setNavigationItemSelectedListener(this)
 
         FirebaseApp.initializeApp(baseContext)
-        usermobile.text= FirebaseAuth.getInstance().currentUser?.phoneNumber.toString()
+//        usermobile.text = FirebaseAuth.getInstance().currentUser?.phoneNumber.toString()
         apply.setOnClickListener {
-            startActivity(Intent(baseContext , ApplyActivity::class.java))
+            startActivity(Intent(baseContext, ApplyActivity::class.java))
         }
         click.setOnClickListener {
-            startActivity(Intent(baseContext ,OptionsActivity::class.java))
+            startActivity(Intent(baseContext, OptionsActivity::class.java))
         }
         btnmenu.setOnClickListener {
             startActivity(Intent(baseContext, MenuActivity::class.java))
         }
         navigationmenu.setOnClickListener {
-          //  nav_view.display
+            //  nav_view.display
             if (!drawer_layout.isDrawerOpen(GravityCompat.START))
                 drawer_layout.openDrawer(Gravity.START)
-
             else
                 drawer_layout.closeDrawer(Gravity.END)
 
         }
-        navigation.setOnNavigationItemSelectedListener ( mOnNavigationItemSelectedListener)
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
     override fun onBackPressed() {
@@ -114,34 +114,33 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.nav_home -> {
-                startActivity(Intent(baseContext , BottomActvity::class.java))
+                startActivity(Intent(baseContext, BottomActvity::class.java))
 
             }
             R.id.nav_account -> {
 
-                supportFragmentManager.beginTransaction().replace(R.id.myid ,MyAccountFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.myid, MyAccountFragment()).commit()
             }
             R.id.nav_credit -> {
 
-                startActivity(Intent(baseContext , CheckScore::class.java))
+                startActivity(Intent(baseContext, CheckScore::class.java))
 
             }
             R.id.nav_rewards -> {
 
-                startActivity(Intent(baseContext , ReferEarn::class.java))
+                startActivity(Intent(baseContext, ReferEarn::class.java))
 
             }
-            R.id.nav_calculator-> {
+            R.id.nav_calculator -> {
 
-                startActivity(Intent(baseContext , EMIcalculator::class.java))
+                startActivity(Intent(baseContext, EMIcalculator::class.java))
             }
             R.id.nav_selfie -> {
 
-                startActivity(Intent(baseContext ,SelfieActivity::class.java ))
+                startActivity(Intent(baseContext, SelfieActivity::class.java))
 
             }
-            R.id.btnlogout->
-            {
+            R.id.btnlogout -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Confirm Logout")
                 builder.setMessage("Are you sure you want to logout?")
@@ -158,9 +157,8 @@ class NavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemS
 
             }
 
-            R.id.btnabout->
-            {
-                startActivity(Intent(baseContext , KnowledgeCenter::class.java))
+            R.id.btnabout -> {
+                startActivity(Intent(baseContext, KnowledgeCenter::class.java))
             }
         }
 

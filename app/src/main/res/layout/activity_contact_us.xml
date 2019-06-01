@@ -35,7 +35,7 @@
             android:layout_margin="7dp"
             android:background="@drawable/card"
             android:scrollbars="vertical"
-            app:cardBackgroundColor=""
+            app:cardBackgroundColor="#03a9f4"
             app:cardCornerRadius="25dp"
             app:cardElevation="20dp"
             app:cardMaxElevation="20dp">
@@ -52,19 +52,19 @@
                     android:fontFamily="monospace"
                     android:gravity="center"
                     android:text="ABOUT YOUR REQUIREMENTS"
-                    android:textColor="#fff"
+                    android:textColor="#0A0101"
                     android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="369dp"
                     android:layout_height="115dp"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/buttondsn"
+                    android:layout_margin="8dp"
+                    android:background="#b3e5fc"
                     android:fontFamily="serif-monospace"
                     android:gravity="center"
                     android:text="Kindly share your details or refer someone and one of our loan officers will connect with you for required assistance"
-                    android:textColor="#fff"
+                    android:textColor="#090101"
                     android:textSize="19dp" />
 
                 <android.support.v7.widget.AppCompatImageView

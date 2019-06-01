@@ -19,8 +19,8 @@
 
     <item
         android:id="@+id/homeloan"
-        android:icon="@drawable/homeloan"
-        android:title="Home Loan" />
+        android:icon="@drawable/ic_star_black_24dp"
+        android:title="Rewards" />
 
     <item
         android:id="@+id/sc"

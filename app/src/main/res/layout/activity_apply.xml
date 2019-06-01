@@ -37,6 +37,7 @@
             app:cardCornerRadius="25dp">
 
             <LinearLayout
+                android:background="#66B88A58"
                 android:layout_width="353dp"
                 android:layout_height="659dp"
                 android:orientation="vertical">

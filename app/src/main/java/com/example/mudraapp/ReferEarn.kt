@@ -16,6 +16,7 @@ class ReferEarn : AppCompatActivity() {
             val i= Intent()
             i.action=Intent.ACTION_SEND
             i.putExtra( Intent.EXTRA_TEXT , "Hello , I'am using Mudra App")
+            i.type="text/plain"
             i.setPackage("com.whatsapp")
             startActivity(i)
         }
